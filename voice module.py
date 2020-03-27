@@ -1,6 +1,11 @@
-import SpeechRecognition as sr
-r=sr.Recognizer()
+import speech_recognition as sr
+r = sr.Recognizer()
 with sr.Microphone() as src:
-    print("Speak Now")
+    print("Speak")
     audio = r.listen(src)
-    print(r.recognize_google(audio))
+    print("thanks")
+
+try:
+    print(r.recognize_google(audio));
+except:
+    pass;
