@@ -1,11 +1,16 @@
 import speech_recognition as sr
-r = sr.Recognizer()
-with sr.Microphone() as src:
-    print("Speak")
-    audio = r.listen(src)
-    print("thanks")
 
+r = sr.Recognizer()
+with sr.Microphone() as source:
+    print("Say the code");
+    audio = r.listen(source)
+    print("Thank You")
+c=""
 try:
-    print(r.recognize_google(audio));
+    c=r.recognize_google(audio);
 except:
-    pass;
+    pass
+if c=="Bravo":
+    print(c+" was accepted")
+else:
+    print(c+" was denied")
